@@ -2,6 +2,7 @@ import { AppFlowEntry } from "@/pages/dashboard";
 import { notFound } from "next/navigation";
 import Home from "./client-component";
 import { adminDB } from "@/config/firebaseAdmin";
+import { headers } from 'next/headers';
 
 const fetchEntries = async (): Promise<AppFlowEntry[]> => {
   const docRef = adminDB.collection('ContentMover').doc('appFlowsDoc');
@@ -13,6 +14,8 @@ const fetchEntries = async (): Promise<AppFlowEntry[]> => {
   }
 
   const data = docSnapshot.data();
+  console.log("Received data: " );
+  console.log("Received data:", data);
   return (data?.appFlows || []) as AppFlowEntry[];
 };
 
@@ -24,6 +27,9 @@ const getFlowByFlowName = async (flow: string): Promise<AppFlowEntry | null> => 
 const ServerComponent = async ({ params }: { params: { flow: string } }) => {
   const { flow } = params;
   const selectedEntry = await getFlowByFlowName(flow);
+  console.log(selectedEntry);
+  console.log('Received flow parameter:', flow);
+  console.log('Full URL:', headers().get('x-url') || 'Not available');
 
   if (!selectedEntry) {
     notFound();
