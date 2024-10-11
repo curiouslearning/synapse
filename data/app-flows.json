@@ -1,0 +1,18 @@
+[
+  {
+    "id": "ukrLet-frSight-cont",
+    "flow": [
+      { "url": "https://assessmentdev.curiouscontent.org/?data=ukrainian-lettersounds", "conditional": 0, "redirect": false },
+      { "url": "https://assessmentdev.curiouscontent.org/?data=french-sightwords", "conditional": 400, "redirect": false },
+      { "url": "https://play.google.com/store/apps/details?id=org.curiouslearning.container&referrer[…]3Flanguage%3Dafrikaans%26source%3Dgoogle%26campaign_id%3D1234", "conditional": 200, "redirect": true }
+    ]
+  },
+  {
+    "id": "frLet-frSight-cont",
+    "flow": [
+      { "url": "https://assessmentdev.curiouscontent.org/?data=french-lettersounds", "conditional": 0, "redirect": false },
+      { "url": "https://assessmentdev.curiouscontent.org/?data=french-sightwords", "conditional": 400, "redirect": false },
+      { "url": "https://play.google.com/store/apps/details?id=org.curiouslearning.container&referrer[…]3Flanguage%3Dafrikaans%26source%3Dgoogle%26campaign_id%3D1234", "conditional": 200, "redirect": true }
+    ]
+  }
+]
